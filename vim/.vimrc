@@ -117,6 +117,7 @@ call dein#add('AndrewRadev/linediff.vim', {
 call dein#add('tomasr/molokai')
 call dein#add('nathanaelkane/vim-indent-guides')
 call dein#add('scrooloose/nerdtree')
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 call dein#add('tpope/vim-fugitive')
 call dein#add('thinca/vim-visualstar')
 
