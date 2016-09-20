@@ -77,6 +77,19 @@ call dein#begin('/Users/hiroki/.vim/dein/.')
 " Required:
 call dein#add('Shougo/dein.vim')
 
+" Add complete
+call dein#add('Shougo/neocomplete.vim')
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Use underbar completion.
+let g:neocomplete#enable_underbar_completion = 1
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 " Add or remove your plugins here:
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
@@ -116,6 +129,7 @@ call dein#add('AndrewRadev/linediff.vim', {
 
 call dein#add('tomasr/molokai')
 call dein#add('nathanaelkane/vim-indent-guides')
+" failer :e
 call dein#add('scrooloose/nerdtree')
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 call dein#add('tpope/vim-fugitive')
@@ -124,6 +138,11 @@ call dein#add('thinca/vim-visualstar')
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+" scala syntax hilite
+call dein#add('derekwyatt/vim-scala')
+au BufRead,BufNewFile *.scala  set filetype=scala
+au BufRead,BufNewFile *.sbt  set filetype=scala
 
 " Required:
 call dein#end()
